@@ -202,14 +202,33 @@ cd kibana-4.5.4-darwin-x64
 
 
 ### データを可視化する前にKibana設定をする
-まずSettingsタブでIndex名を指定する。時間データを入れているキー名もいれておく。(今回は@timestamp)
-
+1. まずSettingsタブでIndex名を指定する。時間データを入れているキー名もいれておく。(今回は@timestamp)
 <img src="https://raw.githubusercontent.com/cocodrips/elasticsearch-lesson/master/images/set-index.png">
+
+2. Visualizeタブ > Vertical bar chart > From new search を選択
+3. Y-Axis の 矢印をクリックして Count->Sumに変更、Fieldをdata.account
+4. bucketsでX-Axisを選ぶ。AggregationをDate Histgram、Fieldを@timestampに、IntervalをDailyに設定。
+5. 再生ボタンを押すと、日毎の各条件のアカウント数の合計値グラフが出てきます。
+<img src="">
+
+6. 右上の保存ボタンを押して、「アカウント」というタイトル保存。
 
 あとはこのあたりを参考に
 [Kibana 4 BETAファーストインプレッション - Qiita](http://qiita.com/harukasan/items/3737a1cc0bed2facc14e)
 
+
 <img src="https://raw.githubusercontent.com/cocodrips/elasticsearch-lesson/master/images/date-histgram.png">
+
+### Dashboardを作る
+1. 「Dashboard」タブをクリック
+2. 右上から ＋ みたいな追加ボタンを押して、「アカウント」を選択
+<img src="">
+3. "status.age=10" というように、クエリを書くと、その条件にあったデータの合計値のみがでてくる。
+
+嬉しいけど、クエリを保存してFilterを最初からいくつか準備しておきたいのだけど、
+そのやり方がまだわからない・・・。毎回クエリ書くのはめんどくさいし、エンジニア以外の人に触ってもらうにはよくない。
+
+
 
 ## 参考にしたページ
 [Fluentd + Elasticsearch + Kibanaで遊んでみた(その1) 〜環境構築から簡単な動作確認まで〜 - カタカタブログ](http://totech.hateblo.jp/entry/2016/01/06/214218)
