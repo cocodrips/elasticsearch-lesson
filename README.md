@@ -178,6 +178,8 @@ mapping
 }
 ```
 
+[http://localhost:9200/service_name/_search?q=*](http://localhost:9200/service_name/_search?q=*)にアクセスすると、データが全部見える。
+
 
 ### データを消す
 データ消したい時は、こんな感じにして消す。
@@ -204,6 +206,11 @@ cd kibana-4.5.4-darwin-x64
 
 <img src="https://raw.githubusercontent.com/cocodrips/elasticsearch-lesson/master/images/set-index.png">
 
+あとはこのあたりを参考に
+[Kibana 4 BETAファーストインプレッション - Qiita](http://qiita.com/harukasan/items/3737a1cc0bed2facc14e)
+
+<img src="https://raw.githubusercontent.com/cocodrips/elasticsearch-lesson/master/images/date-histgram.png">
 
 ## 参考にしたページ
 [Fluentd + Elasticsearch + Kibanaで遊んでみた(その1) 〜環境構築から簡単な動作確認まで〜 - カタカタブログ](http://totech.hateblo.jp/entry/2016/01/06/214218)
+[Kibana 4 BETAファーストインプレッション - Qiita](http://qiita.com/harukasan/items/3737a1cc0bed2facc14e)
